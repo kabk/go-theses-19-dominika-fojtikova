@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+           
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Popup container - can be anything you want */
+.popup {
+    position: absolute;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 220px;
+    margin-left: 560px;
+    font-family: League Mono;
+    font-size: 23px;
+    color: white;
+    top: 20px;
+
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 394px;
+    height: 567px;
+    background-color: white;
+    color: black;
+    text-align: left;
+    border-radius: 0px;
+    padding: 20px 0px ;
+    position: absolute;
+    z-index: 1;
+    bottom: 25;
+    left: 50;
+    margin-left: -126px;
+    font-size: 14px;
+    top: 32px;
+    border: 1px solid;
+    padding: 10px;
+    padding-top: 22px;
+    box-shadow: 3px 8px 16px #0000;
+}
+
+
+
+.popup2 {
+    position: absolute;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 20px;
+    margin-left: 560px;
+    font-family: League Mono;
+    font-size: 23px;
+    color: white;
+    bottom: -5px;
+
+}
+
+/* The actual popup */
+.popup2 .popuptext {
+    visibility: hidden;
+    width: 394px;
+    height: 567px;
+    background-color: white;
+    color: black;
+    text-align: left;
+    border-radius: 0px;
+    padding: 20px 0px ;
+    position: absolute;
+    z-index: 1;
+    bottom: 26;
+    left: 50;
+    margin-left: -126px;
+    font-size: 14px;
+    bottom: 31px;
+    border: 1px solid;
+    padding: 10px;
+    padding-bottom: 22px;
+    box-shadow: 3px 8px 16px #0000;
+}
+
+
+
+
+/* Toggle this class - hide and show the popup */
+.popup .show, .popup2 .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+</style>
+</head>
+
+
+<body background="background.jpg" style="background-position: center;background-repeat: no-repeat;
+    background-size: cover;">
+
+
+     <select id="menu" onchange="window.open(self.frames['dodo'].frames['leftframe'].value,'_self');">
+                  <option value="#chapter1"> The Power Shifts
+                  </option>
+                  <option value="#chapter2">Government and Citizen
+                  </option>
+                  <option value="#chapter3">Government under 
+collectivism</option>
+                  <option value="#chapter4">Government in the age of populism/ Alternative facts
+                  </option>
+
+            </select>
+
+<div style="text-align: center; margin-top: 25px ;"  >
+<iframe name="dodo" src="index.html" height="600" width="1100" style="border: transparent;"></iframe>
+</div>
+
+
+<div class="popup" onclick="popup( 'myPopup' )">Introduction
+  <span class="popuptext" id="myPopup">When one refers to a state of nature,  it means referring to the individuals without any central authority. A none governmental society. A situation in the state of nature is one where you have elaborate rights and duties, but no effective means for enforcement.  Each person has a natural liberty. What happens in many cases is that the balance of power starts to become awkward and individual lives and property are threatened.
+Many philosophers analysed what state of nature means and what would it look like to live in one. The most romanticised hypothesis had Jean-Jacques Rousseau thought who thought that civilisation did not improved people. Instead they had exacted a terrible destructive influence on the morality of human beings, who had once been good. He explored his opinions in his book “The Discourse on the Origins and Foundations of Inequality”. Rousseau's arguments are simple. Individuals had once beed good but as people had emerged from their pre social state and join society, they had become plagued by vice and sin. He sketched how it might looked like at the beginning of history, in his might an idyllic period that he refers to as state of nature. Rousseau saw this period as time when people had more understanding their own minds, and so being drawn towards essential features of a satisfied. In his mind ,the state of nature was moral and guided by spontaneous pity and empathy.</span>
+</div>
+
+<div class="popup2" onclick="popup( 'myPopup2' )">Conclusion
+  <span class="popuptext" id="myPopup2">When one refers to a state of nature,  it means referring to the individuals without any central authority. A none governmental society. A situation in the state of nature is one where you have elaborate rights and duties, but no effective means for enforcement.  Each person has a natural liberty. What happens in many cases is that the balance of power starts to become awkward and individual lives and property are threatened.
+Many philosophers analysed what state of nature means and what would it look like to live in one. The most romanticised hypothesis had Jean-Jacques Rousseau thought who thought that civilisation did not improved people. Instead they had exacted a terrible destructive influence on the morality of human beings, who had once been good. He explored his opinions in his book “The Discourse on the Origins and Foundations of Inequality”. Rousseau's arguments are simple. Individuals had once beed good but as people had emerged from their pre social state and join society, they had become plagued by vice and sin. He sketched how it might looked like at the beginning of history, in his might an idyllic period that he refers to as state of nature. Rousseau saw this period as time when people had more understanding their own minds, and so being drawn towards essential features of a satisfied. In his mind ,the state of nature was moral and guided by spontaneous pity and empathy.</span>
+</div>
+
+<script>
+// When the user clicks on div, open the popup
+function popup( mypage ) {
+    var popup = document.getElementById( mypage );
+    popup.classList.toggle("show");
+}
+</script>
+
+
+</body>
+</html>
