@@ -22,6 +22,62 @@ populism</option>
 
 
 <style>
+
+.popup {
+    position: fixed;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 220px;
+    margin-left: 430px;
+    font-family: League Mono;
+    font-size: 23px;
+    color: black;
+    top: 10px;
+
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 394px;
+    height: 567px;
+    background-color: white;
+    color: black;
+    text-align: left;
+    border-radius: 0px;
+    padding: 20px 0px ;
+    position: absolute;
+    z-index: 999999999 !important;
+    bottom: 25;
+    margin-left: -10px;
+    font-size: 14px;
+    top: 32px;
+    border: 1px solid;
+    padding: 10px;
+    padding-top: 22px;
+}
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+
 #menu{
         left: 37,5vw;
         margin-top: 3vh ;
@@ -31,7 +87,7 @@ populism</option>
                 
         font-size: 10pt;
         line-height: 11pt;
-        width: 350px;
+        width: 260px;
         height: 5vh;
         color: white;
         letter-spacing: 0.3px;
@@ -58,8 +114,11 @@ body{
 </head>
 
 
-<body>
 
+<body>
+<a onclick="showPrintPreview( );" style="font-family: League Mono ;font-size: 23px; padding-top:30px; padding-left:310px; text-align: center; ">
+   Print
+</a>
 
 <br>
 <br>
@@ -67,6 +126,7 @@ body{
 <a name="chapter1" style="font-family: Acta ;font-size: 40px; padding-top:50px; text-align: center; ">
     State of Nature
 </a><br><br>
+
 
 When one refers to a state of nature,  it means referring to the individuals without any central authority. A none governmental society. A situation in the state of nature is one where you have elaborate rights and duties, but no effective means for enforcement.  Each person has a natural liberty. What happens in many cases is that the balance of power starts to become awkward and individual lives and property are threatened.
 <br><br>
@@ -158,33 +218,33 @@ Our contemporary propaganda struggle is shaped by various performances of power.
 State of nature. (2018, November 14).Retrieved from https://en.wikipedia.org/wikiState_of_nature
 </div>
 
-<div style="width: 27%; display: inline-block; position: absolute; z-index: 3000000; height: 330px;top: 220px; background-color: white; padding: 15px;  left: 62%;">
+<div style="width: 27%; display: inline-block; position: absolute; height: 330px;top: 220px; background-color: white; padding: 15px;  left: 62%;">
   <img src="state_of_nature.jpg" width="450">
 </div> 
 
-<div style="width: 27%; display: inline-block; position: absolute; z-index: 3000000; height: 240px;top: 946px; background-color: white; padding: 15px;  left: 62%;">
+<div style="width: 27%; display: inline-block; position: absolute;  height: 240px;top: 946px; background-color: white; padding: 15px;  left: 62%;">
   <img src="metropolis.png" width="340">
 </div> 
-<div style="width: 27%; display: inline-block; position: absolute; z-index: 3000000; height: 280px;top: 1848px; background-color: white; padding: 15px;  left: 62%;">
+<div style="width: 27%; display: inline-block; position: absolute;  height: 280px;top: 1848px; background-color: white; padding: 15px;  left: 62%;">
   <img src="citizen.png" width="395">
 </div> 
-<div style="width: 27%; display: inline-block; position: absolute; z-index: 3000000; height: 290px;top: 2422px; background-color: white; padding: 15px;  left: 62%;">
+<div style="width: 27%; display: inline-block; position: absolute;  height: 290px;top: 2422px; background-color: white; padding: 15px;  left: 62%;">
   <img src="stalin.png" width="445">
 </div> 
-<div style="width: 27%; display: inline-block; position: absolute; z-index: 3000000; height: 225px;top: 3442px; background-color: white; padding: 15px;  left: 62%;">
+<div style="width: 27%; display: inline-block; position: absolute;  height: 225px;top: 3442px; background-color: white; padding: 15px;  left: 62%;">
   <img src="utopia.png" width="445">
 </div> 
-<div style="width: 27%; display: inline-block; position: absolute; z-index: 3000000; height: 345px;top: 3872px; background-color: white; padding: 15px;  left: 62%;">
+<div style="width: 27%; display: inline-block; position: absolute;  height: 345px;top: 3872px; background-color: white; padding: 15px;  left: 62%;">
   <img src="demagogue.png" width="445">
 </div> 
-<div style="width: 27%; display: inline-block; position: absolute; z-index: 3000000; height: 265px;top: 4400px; background-color: white; padding: 15px;  left: 62%;">
+<div style="width: 27%; display: inline-block; position: absolute; height: 265px;top: 4400px; background-color: white; padding: 15px;  left: 62%;">
   <img src="manipulation.png" width="445">
 </div> 
-<div style="width: 27%; display: inline-block; position: absolute; z-index: 3000000; height: 265px;top: 4965px; background-color: white; padding: 15px;  left: 62%;">
+<div style="width: 27%; display: inline-block; position: absolute;p height: 265px;top: 4965px; background-color: white; padding: 15px;  left: 62%;">
   <img src="bannon.png" width="375">
 </div> 
 
-<div style="max-width: 33%; font-family: League Mono; font-size: 10px; display: inline-block; position:absolute; top: 565px;left:62%; background-color: white; padding: 15px;">
+<div style="max-width: 33%; font-family: League Mono; font-size: 10px; display: inline-block; position:absolute; top: 575px;left:62%; background-color: white; padding: 15px;">
     Figure 2f from: Rubens, Pieter Paul 
 </div>
 <div style="max-width: 33%; font-family: League Mono; font-size: 10px; display: inline-block; position:absolute; top: 2141px;left:62%; background-color: white; padding: 15px;">
@@ -216,7 +276,22 @@ Fig.8. Media Manipulation, News Paper Image
 “Review and Analysis: Jean-Jacques Rousseau's ‘Discourse on the Origin and Foundations of Inequality Among Men.’” The Philadelphia Historian,19Dec.2014,thephiladelphiahistorian.wordpress.com/2014/12/19review-and-analysis-jean-jacques-rousseaus-discourse-on-the-origin-and-foundations-of-inequality-among-men/.
 </div>
 
+<div class="popup" onclick="popup( 'myPopup' )">Introduction
+  <span class="popuptext" id="myPopup">When one refers to a state of nature,  it means referring to the individuals without any central authority. A none governmental society. A situation in the state of nature is one where you have elaborate rights and duties, but no effective means for enforcement.  Each person has a natural liberty. What happens in many cases is that the balance of power starts to become awkward and individual lives and property are threatened.
+Many philosophers analysed what state of nature means and what would it look like to live in one. The most romanticised hypothesis had Jean-Jacques Rousseau thought who thought that civilisation did not improved people. Instead they had exacted a terrible destructive influence on the morality of human beings, who had once been good. He explored his opinions in his book “The Discourse on the Origins and Foundations of Inequality”. Rousseau's arguments are simple. Individuals had once beed good but as people had emerged from their pre social state and join society, they had become plagued by vice and sin. He sketched how it might looked like at the beginning of history, in his might an idyllic period that he refers to as state of nature. Rousseau saw this period as time when people had more understanding their own minds, and so being drawn towards essential features of a satisfied. In his mind ,the state of nature was moral and guided by spontaneous pity and empathy.</span>
+</div>
 
+<script>
+// When the user clicks on div, open the popup
+function popup( mypage ) {
+    var popup = document.getElementById( mypage );
+    popup.classList.toggle("show");
+}
+
+function showPrintPreview() {
+  window.open( 'Dominika_Fojtikova_Final_Thesis.pdf', 'printpreview' );
+}
+</script>
 
 </body>
 </html>

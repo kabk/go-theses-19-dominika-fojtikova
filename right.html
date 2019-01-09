@@ -17,6 +17,59 @@
 
 </div>      
 <style>
+
+.popup {
+    position: absolute;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 220px;
+    margin-left: -25px;
+    font-family: League Mono;
+    font-size: 23px;
+    color: black;
+    top: 10px;
+
+}
+.popup .popuptext {
+    visibility: hidden;
+    width: 394px;
+    height: 567px;
+    background-color: white;
+    color: black;
+    text-align: left;
+    border-radius: 0px;
+    padding: 20px 0px ;
+    position: absolute;
+    z-index: 900000000;;
+    margin-left: -380px;
+    font-size: 14px;
+    top: 32px;
+    border: 1px solid;
+    padding: 10px;
+    padding-top: 22px;
+    box-shadow: 3px 8px 16px #0000;
+}
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
 #menu{
         float: right;
         right: 1vw;
@@ -28,7 +81,7 @@
                 
         font-size: 10pt;
         line-height: 11pt;
-        width: 350px;
+        width: 260px;
         height: 5vh;
         color: white;
 
@@ -55,7 +108,7 @@ body{
 <br>
 <br>
 
-<div style="float:right; text-align: right; right: 1vw;border:0px solid red; background-color: white; max-width: 560px; font-family: VG5000; font-weight: Medium; font-size: 16px; display: inline-block; padding:5px;">
+<div style="float:right; text-align: left; right: 1vw;border:0px solid red; background-color: white; max-width: 560px; font-family: VG5000; font-weight: Medium; font-size: 16px; display: inline-block; padding:5px;">
 
 <a name="chapter5"  style="font-family: VG5000 ;font-size: 40px; padding-top:50px; text-align: right; ">
     The Power Shifts
@@ -139,6 +192,18 @@ Fig.12. View of Biosphere 2, Habitat & Lung, photograph 2009
 </div>
 <br></br>
 
+<div class="popup" onclick="popup( 'myPopup' )">Conclusion
+  <span class="popuptext" id="myPopup">When one refers to a state of nature,  it means referring to the individuals without any central authority. A none governmental society. A situation in the state of nature is one where you have elaborate rights and duties, but no effective means for enforcement.  Each person has a natural liberty. What happens in many cases is that the balance of power starts to become awkward and individual lives and property are threatened.
+Many philosophers analysed what state of nature means and what would it look like to live in one. The most romanticised hypothesis had Jean-Jacques Rousseau thought who thought that civilisation did not improved people. Instead they had exacted a terrible destructive influence on the morality of human beings, who had once been good. He explored his opinions in his book “The Discourse on the Origins and Foundations of Inequality”. Rousseau's arguments are simple. Individuals had once beed good but as people had emerged from their pre social state and join society, they had become plagued by vice and sin. He sketched how it might looked like at the beginning of history, in his might an idyllic period that he refers to as state of nature. Rousseau saw this period as time when people had more understanding their own minds, and so being drawn towards essential features of a satisfied. In his mind ,the state of nature was moral and guided by spontaneous pity and empathy.</span>
+</div>
+
+<script>
+// When the user clicks on div, open the popup
+function popup( mypage ) {
+    var popup = document.getElementById( mypage );
+    popup.classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
