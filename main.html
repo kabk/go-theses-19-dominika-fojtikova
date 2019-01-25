@@ -7,6 +7,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+html, body {
+    width: 100%;
+    height:100%;
+}
 /* Popup container - can be anything you want */
 .popup {
     position: absolute;
@@ -88,7 +92,26 @@
     box-shadow: 3px 8px 16px #0000;
 }
 
+embed { 
+    position: fixed;
+    top: 20px; left: 20px;
+    bottom: 20px; right: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    z-index: +1;
+    display: none;
+}
+embed.show { display: inline-block }
 
+#printoverlay {
+    position: fixed;
+    top: 0; left: 0;
+    bottom: 0; right: 0;
+    content: '';
+    background: rgba(0,0,0,0.7);
+    display: none;
+}
+#printoverlay.show { display: inline-block }
 
 
 /* Toggle this class - hide and show the popup */
@@ -130,10 +153,11 @@ collectivism</option>
             </select>
 
 <div style="text-align: center; margin-top: 25px ;"  >
+    <a href="#" onclick="showPrintPreview(event);">print</a>
 <iframe name="dodo" src="index.html" height="600" width="1100" style="border: transparent;"></iframe>
 </div>
 
-
+    
 <div class="popup" onclick="popup( 'myPopup' )">Introduction
   <span class="popuptext" id="myPopup">When one refers to a state of nature,  it means referring to the individuals without any central authority. A none governmental society. A situation in the state of nature is one where you have elaborate rights and duties, but no effective means for enforcement.  Each person has a natural liberty. What happens in many cases is that the balance of power starts to become awkward and individual lives and property are threatened.
 Many philosophers analysed what state of nature means and what would it look like to live in one. The most romanticised hypothesis had Jean-Jacques Rousseau thought who thought that civilisation did not improved people. Instead they had exacted a terrible destructive influence on the morality of human beings, who had once been good. He explored his opinions in his book “The Discourse on the Origins and Foundations of Inequality”. Rousseau's arguments are simple. Individuals had once beed good but as people had emerged from their pre social state and join society, they had become plagued by vice and sin. He sketched how it might looked like at the beginning of history, in his might an idyllic period that he refers to as state of nature. Rousseau saw this period as time when people had more understanding their own minds, and so being drawn towards essential features of a satisfied. In his mind ,the state of nature was moral and guided by spontaneous pity and empathy.</span>
@@ -143,13 +167,37 @@ Many philosophers analysed what state of nature means and what would it look lik
   <span class="popuptext" id="myPopup2">When one refers to a state of nature,  it means referring to the individuals without any central authority. A none governmental society. A situation in the state of nature is one where you have elaborate rights and duties, but no effective means for enforcement.  Each person has a natural liberty. What happens in many cases is that the balance of power starts to become awkward and individual lives and property are threatened.
 Many philosophers analysed what state of nature means and what would it look like to live in one. The most romanticised hypothesis had Jean-Jacques Rousseau thought who thought that civilisation did not improved people. Instead they had exacted a terrible destructive influence on the morality of human beings, who had once been good. He explored his opinions in his book “The Discourse on the Origins and Foundations of Inequality”. Rousseau's arguments are simple. Individuals had once beed good but as people had emerged from their pre social state and join society, they had become plagued by vice and sin. He sketched how it might looked like at the beginning of history, in his might an idyllic period that he refers to as state of nature. Rousseau saw this period as time when people had more understanding their own minds, and so being drawn towards essential features of a satisfied. In his mind ,the state of nature was moral and guided by spontaneous pity and empathy.</span>
 </div>
+    <div id="printoverlay"></div>
+    <embed id="printpreview" src="Dominika_Fojtikova_Final_Thesis.pdf" type="application/pdf" />
 
 <script>
-// When the user clicks on div, open the popup
-function popup( mypage ) {
-    var popup = document.getElementById( mypage );
-    popup.classList.toggle("show");
-}
+    // When the user clicks on div, open the popup
+    function popup( mypage ) {
+        var popup = document.getElementById( mypage );
+        popup.classList.toggle("show");
+    }
+    function showPrintPreview ( event ) {
+        event.preventDefault( );
+        
+        document.getElementById( 'myPopup' ).classList.remove("show");
+        document.getElementById( 'myPopup2' ).classList.remove("show");
+
+        var printoverlay = document.getElementById( 'printoverlay' );
+        printoverlay.classList.toggle( "show" );
+
+        var printpreview = document.getElementById( 'printpreview' );
+        printpreview.classList.toggle( "show" );
+    }
+    function hidePrintPreview ( ) {
+        document.getElementById( 'printoverlay' ).classList.remove("show");
+        document.getElementById( 'printpreview' ).classList.remove("show");
+    }
+    document.onkeyup = function ( event ) {
+        if ( event.key.toLowerCase( ) == 'escape' )
+            hidePrintPreview( );
+    }
+
+    document.getElementById( 'printoverlay' ).onclick = hidePrintPreview;
 </script>
 
 
